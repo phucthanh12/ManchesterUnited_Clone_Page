@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* html using rem */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size:10px;
+    font-family: SourceSansProRegular,Helvetica,sans-serif;
+    color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+    color:unset;
+    display:block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* grid */
+.grid{
+    width: 1200px;
+}
+
+.grid-full-width {
+    width:100%;
+}
+
+.grid-row {
+    display:flex;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-left: -12px
+}
+
+.grid-column-2 {
+    width:49.99999%
+}
+
+.grid-column-3 {
+    width:33.33333%;
+}
+
+.grid-column-5 {
+    width:19.99999%;
+}
+
+.grid-column-4 {
+    width:24.99999%;
+}
+
+.pd-0-8 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+@keyframes newsHighlight {
+    from {
+        box-shadow: none;
+        transform:scale(1);
+    }
+    to {
+        box-shadow: 2px 3px 3px #c1c1c1;
+        transform:scale(1.2rem);
+    }
+}
+
+/*Drop down arrow */
+
+.drop-down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 9px solid #f2f2f2;
+    transform: rotate(-180deg);
+    content: '';
+    position: absolute;
+    top:20px;
+    right:18px;
+    transition: transform ease-in-out 0.02s;
+    will-change: rotate;
+}
+
+.header-sub-language:hover .drop-down-arrow{
+    transform: rotate(0deg);  
+}
+
+/* Button */
+
+.btn {
+    padding: 0.2rem 1.6rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 46px;
+    margin-bottom: 1.2rem;
+}
+
+.btn.btn-sign-up {
+    background-color: #c70101;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Modal from header navigation*/
+/* test modal */
+.content-modal__container {
+    /* display: none; */
+    position: absolute;
+    left:0;
+    right:0;
+    top:100%;
+    height: 60vh;
+    max-height: 70vh;
+    transition: display 0.4s linear;
+}
+
+.content-modal {
+    padding: 2.6rem 2.4rem 2.4rem 11rem;
+    margin : 0 auto;
+    height: initial;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    background-color: rgba(211, 208, 208, 0.75);
+}
+
+.header-main-content li:hover .content-modal__container{
+    display: block;
+}
+
+.content__nav-modal {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content__nav {
+    width: calc(100% /6);
+    padding: 0 1.2rem 1.6rem 0;
+}
+
+.content__nav-title {
+    display: inline-block;
+    font-size: 1.4rem;
+    position: relative;
+    margin-bottom: 0.8rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.content__nav-title:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    left: 0;
+    height: 1px;
+    transition: all 0.2s ease-in-out;
+    transition-duration: 0.5s;
+    will-change: opacity , width;
+    opacity: 0;
+    background-color: var(--primary-color);
+}
+
+.content__nav-title:hover:before {
+    width: 100%;
+    opacity: 1;
+}
+
+/*card content in modal*/
+/* .card__wrapper {
+    width: 100%;
+    height: auto;
+} */
+.card-title {
+    font-size: 1.5rem;
+    font-weight:600;
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin: 32px 0 16px 0;
+}
+
+.card-content {
+    padding-top:70%;
+    position: relative;
+    border-radius: 12px;
+    transition: zoomIn 0.2s ease-in-out;
+}
+
+.card-content:hover {
+    animation : zoomIn ease-in 0.4s forwards;
+}
+
+.grid-row .grid-column-3:first-child .card-content{
+    background: url("../images/news/1.jpg")
+    no-repeat top/cover;
+}
+
+.grid-row .grid-column-3:nth-child(2) .card-content { 
+    background: url("../images/news/2.jpg")
+    no-repeat top/cover;
+}
+
+.grid-row .grid-column-3:last-child .card-content{
+    background: url("../images/news/3.jpg")
+    no-repeat top/cover;
+}
+
+@keyframes zoomIn {
+    from{
+        background-size: 100%;
+    }
+    to {
+        background-size: 105%;
+    }
+}
