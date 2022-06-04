@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,600&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -15,9 +14,8 @@ html {
 
 body {
     font-size:10px;
-    font-family: SourceSansProRegular,Helvetica,sans-serif;
+    font-family: 'SourceSansProRegular',Helvetica,sans-serif;
     color: var(--white-color);
-    min-height: 100%;
     position: relative;
     height: 100%;
     width: 100%;
@@ -50,9 +48,9 @@ ul {
     top: 0;
     background-color: var(--secondary-color);
     opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.19,1,0.22,1)
-    display 0.3s ease-in;
-    min-height: 5000px;
+    transition: opacity 0.3s cubic-bezier(0.19,1,0.22,1),
+    display 0.4s ease-in;
+    min-height: 5000px; /* fixed rồi mà nhỉ?? */
 }
 /* grid */
 .grid{
@@ -66,8 +64,9 @@ ul {
 .grid-row {
     display:flex;
     flex-wrap: wrap;
-    margin-right: -12px;
-    margin-left: -12px
+    margin-right: -8px;
+    margin-left: -8px
+    /* magic number lam ton gan 1h */
 }
 
 .grid-column-2 {
@@ -139,129 +138,4 @@ ul {
 
 .btn:hover {
     opacity: 0.85;
-}
-
-/* Modal from header navigation*/
-/* test modal */
-.content-modal__container {
-    /* display: none; */
-    position: absolute;
-    left:0;
-    right:0;
-    top:100%;
-    height: 60vh;
-    max-height: 70vh;
-    transition: display 0.4s linear;
-}
-
-.content-modal {
-    padding: 2.6rem 2.4rem 2.4rem 11rem;
-    margin : 0 auto;
-    height: initial;
-    position: absolute;
-    left:0;
-    right:0;
-    top:0;
-    background-color: var(--white-color);
-}
-
-.header-main-content li:hover .content-modal__container{
-    display: block;
-}
-
-.content__nav-modal {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.content__nav {
-    width: calc(100% /6);
-    padding: 0 1.2rem 1.6rem 0;
-}
-
-.content__nav-title {
-    display: inline-block;
-    font-size: 1.4rem;
-    position: relative;
-    margin-bottom: 0.8rem;
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
-.content__nav-title:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    left: 0;
-    height: 1px;
-    transition: all 0.2s ease-in-out;
-    transition-duration: 0.5s;
-    will-change: opacity , width;
-    opacity: 0;
-    background-color: var(--primary-color);
-}
-
-.content__nav-title:hover:before {
-    width: 100%;
-    opacity: 1;
-}
-
-@keyframes ImHover {
-    from { 
-        border-bottom: 4px solid transparent;
-    }
-    to {
-        border-bottom: 4px solid var(--white-color);
-    }
-}
-
-/*card content in modal*/
-/* .card__wrapper {
-    width: 100%;
-    height: auto;
-} */
-.card-title {
-    cursor:text;
-    font-size: 1.5rem;
-    font-weight:600;
-    font-style: italic;
-    text-transform: uppercase;
-    color: var(--secondary-color);
-    margin: 32px 0 16px 0;
-}
-
-.card-content {
-    padding-top:70%;
-    position: relative;
-    border-radius: 12px;
-    transition: zoomIn 0.2s ease-in-out;
-}
-
-.card-content:hover {
-    animation : zoomIn ease-in 0.4s forwards;
-}
-
-.grid-row .grid-column-3:first-child .card-content{
-    background: url("../images/news/1.jpg")
-    no-repeat top/cover;
-}
-
-.grid-row .grid-column-3:nth-child(2) .card-content { 
-    background: url("../images/news/2.jpg")
-    no-repeat top/cover;
-}
-
-.grid-row .grid-column-3:last-child .card-content{
-    background: url("../images/news/3.jpg")
-    no-repeat top/cover;
-}
-
-@keyframes zoomIn {
-    from{
-        background-size: 100%;
-    }
-    to {
-        background-size: 105%;
-    }
 }
