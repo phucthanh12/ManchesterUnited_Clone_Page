@@ -125,15 +125,30 @@ ul {
 /* Button */
 
 .btn {
-    padding: 0.2rem 1.6rem;
+    cursor: pointer;
     border: 1px solid #dcdcdc;
     border-radius: 46px;
     margin-bottom: 1.2rem;
 }
 
 .btn.btn-sign-up {
+    padding: 0.2rem 1.6rem;
     background-color: #c70101;
     border: none;
+}
+
+/* co class chua link nen de padding ben class rieng */
+.btn.btn-shop-buy {
+    display: inline-block;
+    background-color: transparent;
+    border-color: #ccc;
+    transition: all ease-in 0.2s;
+    transition-delay: 0.1s;
+}
+
+.btn.btn-shop-buy:hover {
+    background-color: #f4f4f5;
+    opacity: 1;
 }
 
 .btn:hover {
