@@ -404,49 +404,52 @@
     margin: 1.6rem 0 1.2rem 0;
 }
 
-.content-card,.video-card {
+.content-card,.video-card,.ticket-card{
     cursor: pointer;
-    padding-top:70%;
+    padding-top: 70%;
     position: relative;
     border-radius: 12px;
     transition: zoomIn 0.3s ease-in-out,
     box-shadow cubic-bezier(0.58,0.48,1,0) 0.4s; /* smaller number the quicker */
     transform-origin: center;
+    margin-left: 2px;
+    margin-right: 6px;
 }
 
-.content-card:hover,.video-card:hover {
+.content-card:hover,.video-card:hover,
+.ticket-card:hover {
     animation : zoomIn ease-in 0.5s forwards;
     box-shadow: 0px 15px 10px rgb(212 212 212);
 }
 /* content background image */
 .grid-row .grid-column-3:first-child .content-card{
     background: url("../images/news/1.jpg")
-    no-repeat top/cover;
+    no-repeat top center /cover;
 }
 
 .grid-row .grid-column-3:nth-child(2) .content-card { 
     background: url("../images/news/2.jpg")
-    no-repeat top/cover;
+    no-repeat top center/cover;
 }
 
 .grid-row .grid-column-3:last-child .content-card{
     background: url("../images/news/3.jpg")
-    no-repeat top/cover;
+    no-repeat top center/cover;
 }
 /* video background image */
 .grid-row .grid-column-3:first-child .video-card {
     background: url("../images/news/4.jpg")
-    no-repeat top/cover;
+    no-repeat top center/cover;
 }
 
 .grid-row .grid-column-3:nth-child(2) .video-card {
     background: url("../images/news/5.jpg")
-    no-repeat top/cover;
+    no-repeat top center/cover;
 }
 
 .grid-row .grid-column-3:last-child .video-card {
     background: url("../images/news/6.jpg")
-    no-repeat top/cover;
+    no-repeat top center/cover;
 }
 
 /*END: Card content && Card video sharing same css */
@@ -455,6 +458,7 @@
 
 .content-card__title__wrapper{
     position: absolute;
+    z-index: 5;
     left: 6%;
     bottom: 10%;
     right: 8%;
@@ -471,6 +475,7 @@
     background-color: var(--primary-color);
     transition: width linear 0.3s;
     will-change: width;
+    z-index: 3;
 }
 
 .content-card:hover .content-card__title__wrapper::before{
@@ -489,6 +494,7 @@
     left: 6%;
     bottom: 5%;
     right: 8%;
+    z-index: 5;
 }
 
 .play--button {
@@ -689,6 +695,19 @@
     transform: skew(5deg);
 }
 
+/* Ticket card */
+.grid-row .grid-column-3:first-child .ticket-card {
+    background: url("../images/news/7.jpg") 
+    no-repeat top center/ cover;
+}
+.grid-row .grid-column-3:nth-child(2) .ticket-card {
+    background: url("../images/news/8.jpg") 
+    no-repeat top center/ cover;
+}
+.grid-row .grid-column-3:last-child .ticket-card {
+    background: url("../images/news/9.jpg") 
+    no-repeat top center/ cover;
+}
 
 /* keyframes aniamtion */
 @keyframes ImHover {
@@ -721,4 +740,10 @@
     }100% {
         width: 20%;
     }
+}
+
+.log-in-navbar {
+    font-weight:  bold;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
 }
