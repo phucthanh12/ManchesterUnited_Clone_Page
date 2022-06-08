@@ -358,14 +358,23 @@
     width: calc(100% /6);
     padding: 0 1.2rem 1.2rem 0;
 }
+.content__nav.more-content__nav {
+    width: calc(100% /5);
+}
 
 .content__nav-title {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     position: relative;
     margin-bottom: 0.8rem;
     color: var(--secondary-color);
     /* font-weight: bold; */
+}
+
+.content__nav-title.more-content {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.1rem;
+    margin-bottom: 0.4rem;
 }
 
 .content__nav-title:before {
@@ -409,11 +418,12 @@
     padding-top: 70%;
     position: relative;
     border-radius: 12px;
+    border-bottom-left-radius: 12px;
     transition: zoomIn 0.3s ease-in-out,
     box-shadow cubic-bezier(0.58,0.48,1,0) 0.4s; /* smaller number the quicker */
     transform-origin: center;
-    margin-left: 2px;
-    margin-right: 6px;
+    margin-left: 6px;
+    margin-right: 12px;
 }
 
 .content-card:hover,.video-card:hover,
@@ -488,6 +498,12 @@
     text-shadow: 1px 1px 1px var(--primary-color);
 }
 
+.content-card__sub-title {
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.3rem;
+}
+
 /* card video */
 .video-card__title__wrapper {
     position: absolute;
@@ -526,13 +542,14 @@
 
 /* Shop Card */
 .shop-card {
-    width: 100%;
+/*The problem is that width=100% would give photo-caption exact width of article-container; adding margins (or padding) would not affect width calculation. You can do this yourself using the css calc() so the style become */
     height: 300px;
     max-height:310px;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
     border: 2px solid #f7f7f7;
+    margin: 0 6px;
 }
 
 .shop-card:hover {
@@ -588,13 +605,14 @@
 
 /* fixture card */
 .fixture-card {
-    width: 100%;
+    /* width: 100%; */
     height: 300px;
     max-height:310px;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
     border: 2px solid #f7f7f7;
+    margin: 0 6px;
 }
 
 .fixture-card:hover {
@@ -696,15 +714,15 @@
 }
 
 /* Ticket card */
-.grid-row .grid-column-3:first-child .ticket-card {
+.grid-row .grid-column-3:first-child .content-card.ticket-section {
     background: url("../images/news/7.jpg") 
     no-repeat top center/ cover;
 }
-.grid-row .grid-column-3:nth-child(2) .ticket-card {
+.grid-row .grid-column-3:nth-child(2) .content-card.ticket-section {
     background: url("../images/news/8.jpg") 
     no-repeat top center/ cover;
 }
-.grid-row .grid-column-3:last-child .ticket-card {
+.grid-row .grid-column-3:last-child .content-card.ticket-section {
     background: url("../images/news/9.jpg") 
     no-repeat top center/ cover;
 }
@@ -732,18 +750,102 @@
     0% {
         width: 1%;
     }25% {
-        width: 5%;
-    }50% {
         width: 10%;
-    }75% {
+    }50% {
         width: 15%;
-    }100% {
+    }75% {
         width: 20%;
+    }100% {
+        width: 25%;
     }
 }
-
+/* My united section nav */
 .log-in-navbar {
     font-weight:  bold;
     font-size: 1.2rem;
     color: var(--secondary-color);
 }
+.grid-row .grid-column-3:first-child .content-card.MU-section { 
+    background: url("../images/news/10.jpg")
+    no-repeat top center/cover;
+}
+
+.grid-row .grid-column-3:last-child .content-card.MU-section{
+    background: url("../images/news/8.jpg")
+    no-repeat top center/cover;
+}
+/* Fan section nav */
+.grid-row .grid-column-3:first-child .content-card.Fan-section{
+    background: url("../images/news/11.jpg")
+    no-repeat top center/cover;
+}
+.grid-row .grid-column-3:nth-child(2) .content-card.Fan-section{
+    background: url("../images/news/12.jpg")
+    no-repeat top center/cover;
+}
+.grid-row .grid-column-3:last-child .content-card.Fan-section{
+    background: url("../images/news/13.jpg")
+    no-repeat top center/cover;
+}
+
+/* Player section nav */ 
+.grid-row .grid-column-3:first-child .content-card.Player-section{
+    background: url("../images/news/14.jpg")
+    no-repeat top center/cover;
+}
+.grid-row .grid-column-3:last-child .content-card.Player-section{
+    background: url("../images/news/15.jpg")
+    no-repeat top center/cover;
+}
+/* Old Trafford section nav */
+.grid-row .grid-column-3:first-child .content-card.Old-Trafford-section{
+    background: url("../images/news/16.jpg")
+    no-repeat top center/cover;
+}
+.grid-row .grid-column-3:last-child .content-card.Old-Trafford-section{
+    background: url("../images/news/17.jpg")
+    no-repeat top center/cover;
+}
+/* More content nav */
+.more-content-wrapper {
+    margin-top: 0.4rem;
+}
+.list-more-content:first-child {
+    margin-top: 1.2rem;
+}
+
+.list-more-content{
+    margin-bottom: 0.8rem;
+}
+
+.list-more-content-link {
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.list-more-content-link::before {
+    content: "";
+    width:0;
+    height: 1px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.2s ease-in-out;
+    transition-duration: 0.5s;
+    will-change: opacity , width;
+    opacity: 0;
+}
+
+.list-more-content-link:hover::before{
+    width: 100%;
+    opacity: 1;
+}
+
+
